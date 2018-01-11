@@ -12,6 +12,8 @@ app.engine('hbs', expressHandlebars({
 app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, 'views/pages'));
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.listen(PORT, (err) => {
 	if (err) return console.log('something bad happened', err);
 	console.log(`server is listening on ${PORT}`);
