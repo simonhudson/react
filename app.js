@@ -9,6 +9,7 @@ app.engine('hbs', expressHandlebars({
 	extname:'hbs',
 	layoutsDir: path.join(__dirname, 'views/layouts')
 }));
+
 app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, 'views/pages'));
 
@@ -20,4 +21,4 @@ app.listen(PORT, (err) => {
 	app.get('/', (req, res) => {
 		res.render('home');
 	});
-})
+});
