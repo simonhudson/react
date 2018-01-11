@@ -14,11 +14,9 @@ app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, 'views/pages'));
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/', require('./routes'));
 
 app.listen(PORT, (err) => {
 	if (err) return console.log('something bad happened', err);
-	console.log(`server is listening on ${PORT}`);
-	app.get('/', (req, res) => {
-		res.render('home');
-	});
+	console.log(`Server is listening on ${PORT}`);
 });
